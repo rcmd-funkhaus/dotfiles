@@ -3,16 +3,20 @@
 case `uname` in
     "Linux")
         if ! which git; then
-            echo "Fail"
-        else
-            echo "Success"
+            echo "Please, install git first"
+            exit 1
         fi
         ;;
     "Darwin")
         if ! which -s git; then
-            echo "Fail on Mac"
-        else
-            echo "Success on Mac"
+            echo "Please, install git first"
+            exit 1
         fi
         ;;
 esac
+
+if ! [[ -d ~/.config/dotfiles ]]; then
+    mkdir -p ~/.config/dotfiles
+fi
+
+git clone git://github.com/Like-all/dotfiles.git ~/.config/dotfiles
