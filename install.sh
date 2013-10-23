@@ -7,5 +7,8 @@ case `uname` in
         fi
         ;;
     "Darwin")
+        if which -s git; then
+            echo "Success on Mac"
+        fi
         ;;
 esac
