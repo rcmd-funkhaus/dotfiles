@@ -15,8 +15,12 @@ case `uname` in
         ;;
 esac
 
-if ! [[ -d ~/.config/dotfiles ]]; then
+if ! [[ -d ~/.config/dotfiles/.git ]]; then
     mkdir -p ~/.config/dotfiles
+    git clone git://github.com/Like-all/dotfiles.git ~/.config/dotfiles
+
+else
+    cd ~/.config/dotfiles && git pull
+
 fi
 
-git clone git://github.com/Like-all/dotfiles.git ~/.config/dotfiles
