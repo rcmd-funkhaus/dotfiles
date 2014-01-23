@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+function install_vim-task() {
+    if ! [[ -d ~/.vim ]]; then
+        mkdir ~/.vim
+    fi
+    git clone https://github.com/samsonw/vim-task.git ~/.config/vim-task
+    rm ~/.config/vim-task/README.mkd
+    cp -rv ~/.config/vim-task/* ~/.vim/
+    rm -fr ~/.config/vim-task/
+}
+
 function install_vimrc() {
     ln -is ~/.config/dotfiles/vimrc ~/.vimrc
 }
@@ -23,10 +33,12 @@ function clone_repo() {
 function setup_linux() {
     install_vimrc
     install_i3cfg
+    install_vim-task
 }
 
 function setup_osx() {
     install_vimrc
+    install_vim-task
 }
 
 case `uname` in
