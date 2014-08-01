@@ -7,18 +7,18 @@ function install_zsh_config() {
 }
 
 function install_vimrc() {
-    ln -is $cfgdir/vimrc ~/.vimrc
+    ln -is $cfgdir/vimrc $HOME/.vimrc
 }
 
 function install_screenrc() {
-    ln -is $cfgdir/screenrc ~/.screenrc
+    ln -is $cfgdir/screenrc $HOME/.screenrc
 }
 
 function install_i3cfg() {
     if ! [[ -d ~/.i3 ]]; then
         mkdir ~/.i3
     fi
-    ln -is $cfgdir/i3/config ~/.i3/config
+    ln -is $cfgdir/i3/config $HOME/.i3/config
 }
 
 
