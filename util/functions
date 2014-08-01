@@ -1,4 +1,4 @@
-cfgdir="~/.config/dotfiles/cfg"
+cfgdir="$HOME/.config/dotfiles/cfg"
 
 #configs functions
 function install_zsh_config() {
