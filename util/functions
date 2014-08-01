@@ -10,6 +10,10 @@ function install_vimrc() {
     ln -is $cfgdir/vimrc ~/.vimrc
 }
 
+function install_screenrc() {
+    ln -is $cfgdir/screenrc ~/.screenrc
+}
+
 function install_i3cfg() {
     if ! [[ -d ~/.i3 ]]; then
         mkdir ~/.i3
@@ -19,13 +23,18 @@ function install_i3cfg() {
 
 
 #setup funtions
-function setup_linux() {
+
+function setup_common() {
     install_zsh_config
     install_vimrc
+    install_screenrc
+}
+
+function setup_linux() {
     install_i3cfg
+    setup_common
 }
 
 function setup_osx() {
-    install_zsh_config
-    install_vimrc
+    setup_common
 }
