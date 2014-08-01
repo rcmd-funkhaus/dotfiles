@@ -1,18 +1,20 @@
+cfgdir="~/.config/dotfiles/cfg"
+
 #configs functions
 function install_zsh_config() {
-    ln -is ~/.config/dotfiles/zshrc ~/.zshrc
+    ln -is $cfgdir/zshrc ~/.zshrc
     curl -sL http://install.ohmyz.sh | sh
 }
 
 function install_vimrc() {
-    ln -is ~/.config/dotfiles/vimrc ~/.vimrc
+    ln -is $cfgdir/vimrc ~/.vimrc
 }
 
 function install_i3cfg() {
     if ! [[ -d ~/.i3 ]]; then
         mkdir ~/.i3
     fi
-    ln -is ~/.config/dotfiles/i3/config ~/.i3/config
+    ln -is $cfgdir/i3/config ~/.i3/config
 }
 
 
