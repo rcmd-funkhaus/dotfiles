@@ -1,0 +1,29 @@
+#configs functions
+function install_zsh_config() {
+    ln -is ~/.config/dotfiles/zshrc ~/.zshrc
+    curl -sL http://install.ohmyz.sh | sh
+}
+
+function install_vimrc() {
+    ln -is ~/.config/dotfiles/vimrc ~/.vimrc
+}
+
+function install_i3cfg() {
+    if ! [[ -d ~/.i3 ]]; then
+        mkdir ~/.i3
+    fi
+    ln -is ~/.config/dotfiles/i3/config ~/.i3/config
+}
+
+
+#setup funtions
+function setup_linux() {
+    install_zsh_config
+    install_vimrc
+    install_i3cfg
+}
+
+function setup_osx() {
+    install_zsh_config
+    install_vimrc
+}
