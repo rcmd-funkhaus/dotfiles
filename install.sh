@@ -10,6 +10,10 @@ function clone_repo() {
 }
 
 if [[ $1 == 'uninstall' ]]; then
+    IFS=$'\n'
+    for i in `cat $HOME/.config/dotfiles/installed`; do
+        rm -fr $i
+    done
     echo "Bye"
     exit 0
 fi

@@ -4,6 +4,8 @@ cfgdir="$HOME/.config/dotfiles/cfg"
 function install_zsh_config() {
     ln -is $cfgdir/zshrc ~/.zshrc
     curl -sL http://install.ohmyz.sh | sh
+    echo $HOME"/.zshrc" >> $cfgdir/../installed
+    echo $HOME"/.oh-my-zsh" >> $cfgdir/../installed
 }
 
 function install_vimrc() {
@@ -32,6 +34,7 @@ function setup_common() {
     install_zsh_config
     install_vimrc
     install_screenrc
+    echo $HOME"/.config/dotfiles" >> $cfgdir/../installed
 }
 
 function setup_linux() {
