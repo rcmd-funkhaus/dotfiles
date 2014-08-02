@@ -9,7 +9,7 @@ function clone_repo() {
     fi
 }
 
-if $1 == 'uninstall'; then
+if [[ $1 == 'uninstall' ]]; then
     echo "Bye"
     exit 0
 fi
