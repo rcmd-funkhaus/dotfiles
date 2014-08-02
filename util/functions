@@ -13,6 +13,11 @@ function install_vimrc() {
     echo $HOME"/.vimrc" >> $cfgdir/../installed
 }
 
+function install_gitconfig() {
+    ln -is $cfgdir/gitconfig $HOME/.gitconfig
+    echo $HOME"/.gitconfig" >> $cfgdir/../installed
+}
+
 function install_screenrc() {
     ln -is $cfgdir/screenrc $HOME/.screenrc
     echo $HOME"/.screenrc" >> $cfgdir/../installed
@@ -34,6 +39,7 @@ function setup_common() {
     install_zsh_config
     install_vimrc
     install_screenrc
+    install_gitconfig
     echo $HOME"/.config/dotfiles" >> $cfgdir/../installed
 }
 
