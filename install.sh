@@ -9,6 +9,10 @@ function clone_repo() {
     fi
 }
 
+if $1 == 'uninstall'; then
+    echo "Bye"
+    exit 0
+fi
 
 case `uname` in
     "Linux")
