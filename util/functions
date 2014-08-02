@@ -8,10 +8,12 @@ function install_zsh_config() {
 
 function install_vimrc() {
     ln -is $cfgdir/vimrc $HOME/.vimrc
+    echo $HOME"/.vimrc" >> $cfgdir/../installed
 }
 
 function install_screenrc() {
     ln -is $cfgdir/screenrc $HOME/.screenrc
+    echo $HOME"/.screenrc" >> $cfgdir/../installed
 }
 
 function install_i3cfg() {
@@ -19,20 +21,22 @@ function install_i3cfg() {
         mkdir ~/.i3
     fi
     ln -is $cfgdir/i3/config $HOME/.i3/config
+    echo $HOME"/.i3" >> $cfgdir/../installed
 }
 
 
 #setup funtions
 
 function setup_common() {
+    cat /dev/null > $cfgdir/../installed
     install_zsh_config
     install_vimrc
     install_screenrc
 }
 
 function setup_linux() {
-    install_i3cfg
     setup_common
+    install_i3cfg
 }
 
 function setup_osx() {
