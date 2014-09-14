@@ -31,6 +31,13 @@ function install_i3cfg() {
     echo $HOME"/.i3" >> $cfgdir/../installed
 }
 
+function install_binutils() {
+    if ! [[ -d ~/bin ]]; then
+        mkdir ~/bin
+    fi
+    ln -is $cfgdir/bin/* $HOME/bin/*
+    echo $HOME"/bin" >> $cfgdir/../installed
+}
 
 #setup funtions
 
