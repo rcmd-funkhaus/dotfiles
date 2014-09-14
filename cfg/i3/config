@@ -139,6 +139,9 @@ bindcode 123 exec amixer -qc 0 set Master 2dB+
 #autoexecs
 
 exec fbxkb
+exec /home/buckstabu/bin/utox
+exec roxterm
+exec firefox
 exec clipit
 exec xscreensaver -nosplash
 exec wicd-gtk -t
