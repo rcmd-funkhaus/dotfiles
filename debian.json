@@ -1,0 +1,6 @@
+{
+	"preinstall": ["ps -ef", "ls -a"],
+	"packages": ["git", "vim", "inkscape"],
+	"dotfiles": [".shit"],
+	"postinstall": ["ps", "ls"]
+}
