@@ -7,5 +7,5 @@
 ],
 	"packages": ["git", "vim", "screen", "htop", "zsh", "apt-file", "mercurial", "man", "dialog", "locales", "libtool", "automake", "pkg-config" ],
 	"dotfiles": [".vimrc", ".screenrc", ".gitconfig"],
-	"postinstall": ["apt-file update"]
+	"postinstall": ["sed -i 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale-gen", "locale-gen", "apt-file update"]
 }
