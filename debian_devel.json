@@ -5,7 +5,7 @@
 		"sudo echo \"deb http://wasteland.it-the-drote.tk/apps/debian/ \"$(lsb_release -c | awk '{print $2}')\" main contrib non-free\" > /etc/apt/sources.list.d/wasteland.it-the-drote.list",
 		"sudo apt-get update"
 ],
-	"packages": ["git", "vim", "screen", "htop", "zsh", "apt-file", "mercurial", "man", "dialog", "locales", "libtool", "automake" ],
+	"packages": ["git", "vim", "screen", "htop", "zsh", "apt-file", "mercurial", "man", "dialog", "locales", "libtool", "automake", "pkg-config" ],
 	"dotfiles": [".vimrc", ".screenrc", ".gitconfig"],
 	"postinstall": ["apt-file update"]
 }
