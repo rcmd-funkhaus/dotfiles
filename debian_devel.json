@@ -5,7 +5,7 @@
 		"sudo echo \"deb http://wasteland.it-the-drote.tk/apps/debian/ \"$(lsb_release -c | awk '{print $2}')\" main contrib non-free\" > /etc/apt/sources.list.d/wasteland.it-the-drote.list",
 		"sudo apt-get update"
 ],
-	"packages": ["git", "vim", "screen", "htop", "zsh", "apt-file", "mercurial", "man", "dialog", "locales", "libtool", "automake", "pkg-config", "libncursesw5-dev", "libglib2.0-dev", "libloudmouth1-dev", "libenchant-dev", "md5deep", "fakeroot" ],
+	"packages": ["git", "vim", "screen", "htop", "zsh", "apt-file", "mercurial", "man", "dialog", "locales", "libtool", "automake", "pkg-config", "libncursesw5-dev", "libglib2.0-dev", "libloudmouth1-dev", "libenchant-dev", "md5deep", "fakeroot", "openssh-client" ],
 	"dotfiles": [".vimrc", ".screenrc", ".gitconfig", ".bashrc"],
 	"postinstall": ["sed -i 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen", "locale-gen", "apt-file update"]
 }
