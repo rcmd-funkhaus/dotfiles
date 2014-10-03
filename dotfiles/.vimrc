@@ -30,3 +30,10 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 noremap <silent> <buffer> zz :call Toggle_task_status()<CR>:w<CR>
 
 syntax on
+
+
+if has('gui_running')
+    colorscheme molokai
+    set background=dark
+    set guifont=PragmataPro
+endif
