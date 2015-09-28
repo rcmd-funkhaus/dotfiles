@@ -3,4 +3,7 @@
 !.zshrc
 !.vim/
 !.vimrc
+!.config/
+.config/*
+!.config/i3/
 !.config/oldconfigs/
