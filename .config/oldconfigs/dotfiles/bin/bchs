@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+upfile=`echo $2 | sed 's|file://||'`
+
+usage()
+{
+    echo "Usage: dump <file|image|text> [file] [language]"
+}
+
+case $1 in
+    file)
+        URL=`curl -w %{redirect_url} -F "file=@$upfile" http://dump.bitcheese.net/upload-file?simple` 
+        echo -n $URL | xclip
+        echo $URL
+        ;;
+    image)
+        URL=`curl -w %{redirect_url} -F "file=@$upfile" http://dump.bitcheese.net/upload-image?simple`
+        echo -n $URL | xclip
+        notify-send "Uploaded"
+        echo $URL
+        ;;
+    text)
+        if [ -z $3 ] ; then
+            LANG=Plaintext
+        else
+            LANG=$3
+        fi
+        URL=`curl -w %{redirect_url} -F "lang=$LANG" -F "text=@$upfile" http://dump.bitcheese.net/upload-text`
+        echo $URL
+        ;;
+    *) usage;
+esac

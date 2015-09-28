@@ -1,0 +1,5 @@
+[user]
+	name = Like-all
+	email = like-all@yandex.com
+[sendemail]
+	smtpserver = /usr/bin/msmtp

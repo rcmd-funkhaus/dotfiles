@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+watchdir=$1
+
+while inotifywait -r -e close_write $watchdir; do
+	sleep 0.5
+    if [[ -z `pgrep uzbl` ]]; then
+        echo "reload" | nc -q 1 localhost 50050
+        echo "reload" | nc -q 1 localhost 50050
+    else
+        echo "reload" > `ls /tmp/uzbl_fifo*`
+    fi
+done
