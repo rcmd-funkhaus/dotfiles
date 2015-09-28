@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/buckstabu/dev/packages/debian/tinysystemd/systemd-219/rules'
+let g:netrw_dirhist_2='/home/buckstabu/dev/packages/debian/tinysystemd/systemd-219/debian'
+let g:netrw_dirhist_3='/home/buckstabu/dev/packages/debian/tinysystemd/systemd-219/rules'
+let g:netrw_dirhist_4='/usr/share/pyshared/kule'
+let g:netrw_dirhist_5='/home/buckstabu/dev/packages/debian/rsstail/rsstail/debian/patches'
+let g:netrw_dirhist_6='/home/buckstabu/.config/cryptbox/yandex-work/repo/tools/mysqltools-restart'
+let g:netrw_dirhist_7='/etc/profile.d'
+let g:netrw_dirhist_8='/home/buckstabu/dev/hosts-dropins/debian'
