@@ -6,4 +6,5 @@
 !.config/
 .config/*
 !.config/i3/
+!.config/roxterm.sourceforge.net/
 !.config/oldconfigs/
