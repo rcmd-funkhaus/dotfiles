@@ -1,0 +1,10 @@
+[roxterm profile]
+colour_scheme=solarized-light
+font=Input Extra-Condensed 10
+show_add_tab_btn=0
+tab_close_btn=0
+disable_menu_shortcuts=1
+disable_tab_menu_shortcuts=1
+cursor_shape=1
+cursor_blink_mode=1
+scrollback_lines=5000
