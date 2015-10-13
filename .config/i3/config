@@ -153,7 +153,7 @@ exec /usr/bin/dunst
 exec setxkbmap -option "grp:caps_toggle,grp_led:scroll" -layout "us,ru"
 exec ssh-add ~/.ssh/id_rsa
 exec gvim --cmd 'let &titlestring="scratchpad"' --cmd "set guioptions-=m" --cmd "set guioptions-=T"
-exec compton -b --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c'
+exec compton -b --shadow-exclude 'argb && _NET_WM_OPAQUE_REGION@:c' --shadow-exclude fullscreen
 exec xmodmap -e "keycode 169 = Insert"
 exec blueman-applet
 
