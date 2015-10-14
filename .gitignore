@@ -3,6 +3,7 @@
 !.zshrc
 !.vim/
 !.vimrc
+!.screenrc
 !.config/
 .config/*
 !.config/i3/

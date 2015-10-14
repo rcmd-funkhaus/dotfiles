@@ -1,0 +1,37 @@
+bindkey "\0331" select 1
+bindkey "\0332" select 2
+bindkey "\0333" select 3
+bindkey "\0334" select 4
+bindkey "\0335" select 5
+bindkey "\0336" select 6
+bindkey "\0337" select 7
+bindkey "\0338" select 8
+bindkey "\0339" select 9
+bindkey "\0330" select 0
+
+
+bindkey "^H" kill
+bindkey "^T" screen
+
+bindkey "^L" remove
+bindkey "^V" split -v
+bindkey "^S" split
+bindkey "^F" focus
+
+
+vbell off
+# сообщение для (visual bell)
+vbell_msg "vbell %n"
+# сообщение если в фоновом окне bell character, ^G
+bell_msg "Bell %n"
+# сообщение если есть активность в наблюдаемом окне
+activity "Activity on %n"
+
+
+defmonitor on
+# количество сохраненных строк
+defscrollback 10000
+# при копировании строки будут разделяться символами CR — LF
+crlf off
+# нахрен нам страница приветсвия
+startup_message off 
