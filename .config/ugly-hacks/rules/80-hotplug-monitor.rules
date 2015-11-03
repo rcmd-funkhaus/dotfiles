@@ -1,0 +1,1 @@
+ACTION=="change", SUBSYSTEM=="drm", HOTPLUG=="1", RUN+="/bin/systemctl start hotplug-monitor"

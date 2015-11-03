@@ -8,5 +8,6 @@
 !.config/
 .config/*
 !.config/i3/
+!.config/ugly-hacks/
 !.config/roxterm.sourceforge.net/
 !.config/oldconfigs/
