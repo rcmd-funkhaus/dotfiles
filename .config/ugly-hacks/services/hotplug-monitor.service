@@ -1,0 +1,10 @@
+[Unit]
+Description=Hotplugging second screen
+
+[Service]
+Type=oneshot
+User=buckstabu
+ExecStart=/home/buckstabu/.config/ugly-hacks/scripts/display.sh
+
+[Install]
+WantedBy=multi-user.target

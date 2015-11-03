@@ -1,0 +1,11 @@
+[Unit]
+Description=Fix the fuck up layout switching
+
+[Service]
+Type=oneshot
+User=buckstabu
+ExecStart=/home/buckstabu/.config/ugly-hacks/scripts/keyboard.sh attach
+ExecStop=/home/buckstabu/.config/ugly-hacks/scripts/keyboard.sh detach
+
+[Install]
+WantedBy=multi-user.target
