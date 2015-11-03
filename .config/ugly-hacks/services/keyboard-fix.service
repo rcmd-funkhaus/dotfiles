@@ -2,8 +2,10 @@
 Description=Fix the fuck up layout switching
 
 [Service]
-Type=oneshot
+Type=simple
 User=buckstabu
+RemainAfterExit=true
+TimeoutStartSec=20s
 ExecStart=/home/buckstabu/.config/ugly-hacks/scripts/keyboard.sh attach
 ExecStop=/home/buckstabu/.config/ugly-hacks/scripts/keyboard.sh detach
 
