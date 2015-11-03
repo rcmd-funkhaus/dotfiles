@@ -8,6 +8,7 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
 
 set $mod Mod4
 
@@ -78,10 +79,10 @@ bindsym $mod+m move workspace to output left
 #bindcode $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace 1: main
+bindsym $mod+2 workspace 2: communication
+bindsym $mod+3 workspace 3: music
+bindsym $mod+4 workspace 4: dev
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -90,10 +91,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move container to workspace 1
-bindsym $mod+Shift+at move container to workspace 2
-bindsym $mod+Shift+numbersign move container to workspace 3
-bindsym $mod+Shift+dollar move container to workspace 4
+bindsym $mod+Shift+exclam move container to workspace 1: main
+bindsym $mod+Shift+at move container to workspace 2: communication
+bindsym $mod+Shift+numbersign move container to workspace 3: music
+bindsym $mod+Shift+dollar move container to workspace 4: dev
 bindsym $mod+Shift+percent move container to workspace 5
 bindsym $mod+Shift+asciicircum move container to workspace 6
 bindsym $mod+Shift+ampersand move container to workspace 7
@@ -140,14 +141,13 @@ bindcode 232 exec sudo brightness decrease
 bindcode 233 exec sudo brightness increase
 
 #autoexecs
+exec i3-msg "workspace 1: main; layout tabbed"
 
-exec fbxkb
-exec qtox
 exec roxterm
+exec gxkb
 exec firefox
 exec clipit
 exec xscreensaver -nosplash
-# exec wicd-gtk -t
 exec yandex-disk start
 exec /usr/bin/dunst
 exec setxkbmap -option "grp:caps_toggle,grp_led:scroll" -layout "us,ru"
