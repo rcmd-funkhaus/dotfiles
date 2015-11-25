@@ -33,7 +33,7 @@ syntax on
 
 
 if has('gui_running')
-    colorscheme molokai
+    colorscheme solarized
     set background=dark
-    set guifont=PragmataPro
+    set guifont=Input Regular
 endif
