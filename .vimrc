@@ -35,5 +35,5 @@ syntax on
 if has('gui_running')
     colorscheme solarized
     set background=dark
-    set guifont=Input Regular
+    set guifont=Input
 endif
