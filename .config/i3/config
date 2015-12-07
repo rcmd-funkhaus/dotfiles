@@ -145,7 +145,7 @@ exec i3-msg "workspace 1: main; layout tabbed"
 
 exec roxterm
 exec gxkb
-exec firefox
+exec yandex-browser
 exec clipit
 exec xscreensaver -nosplash
 exec yandex-disk start
