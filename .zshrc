@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-source /home/buckstabu/.config/cryptbox/yandex-work/cfg/zsh
+source /home/buckstabu/.config/cryptbox/yandex-work/configs/zsh
 
 export DEBFULLNAME="Azer Abdullaev"
 export DEBEMAIL="buckstabu@yandex-team.ru"
