@@ -6,5 +6,5 @@ case `uname -s` in
     wget -c https://api.github.com/repos/Like-all/dotfiles/tarball -O master.tar.gz
     ;;
 esac
-
+mkdir dotfiles
 tar -xf master.tar.gz -C dotfiles
