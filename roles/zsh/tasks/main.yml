@@ -1,0 +1,5 @@
+- name: Install zshrc
+  template:
+    src: "{{ ansible_env.PWD }}/roles/zsh/templates/zshrc.j2"
+    dest: "{{ ansible_env.HOME }}/.zsh"
+    mode: '0644'
