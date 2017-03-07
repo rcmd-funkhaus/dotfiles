@@ -1,0 +1,5 @@
+- name: Install vimrc
+  template:
+    src: "{{ ansible_env.PWD }}/roles/vim/templates/vimrc.j2"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
+    mode: '0644'

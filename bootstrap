@@ -1,0 +1,10 @@
+case `uname -s` in
+  "Darwin")
+    curl https://api.github.com/repos/Like-all/dotfiles/tarball > master.tar.gz
+    ;;
+  "Linux")
+    wget -c https://api.github.com/repos/Like-all/dotfiles/tarball -O master.tar.gz
+    ;;
+esac
+
+tar -xf master.tar.gz -C dotfiles
