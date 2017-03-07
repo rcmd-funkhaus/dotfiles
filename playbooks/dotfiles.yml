@@ -1,5 +1,7 @@
 ---
 - hosts: local
+  vars:
+    home_directory: "{{ ansible_env.HOME }}"
   tasks:
   - name: vimrc
     template:
