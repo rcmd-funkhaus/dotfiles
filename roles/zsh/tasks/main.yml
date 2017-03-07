@@ -1,3 +1,9 @@
+- name: Install oh-my-zsh
+  command: "git clone git://github.com/robbyrussell/oh-my-zsh.git {{ ansible_env.HOME }}/.oh-my-zsh"
+
+- name: Change shell to zsh
+  command: "chsh -s /bin/zsh"
+
 - name: Install zshrc
   template:
     src: "{{ ansible_env.PWD }}/roles/zsh/templates/zshrc.j2"
