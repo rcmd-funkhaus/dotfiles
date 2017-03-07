@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+case `uname -s` in
+    "Darwin")
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install ansible
+        ;;
+    "Linux")
+        case `head -n 1 /etc/issue | cut -f 1 -d ' '` in
+            "Debian")
+                sudo apt-get install ansible
+                ;;
+            "CentOS")
+                sudo yum install ansible
+                ;;
+        esac
+        ;;
+esac
