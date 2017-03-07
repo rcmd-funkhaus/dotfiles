@@ -6,7 +6,8 @@
   when: ohmyzsh_directory.stat.exists == False
 
 - name: Change shell to zsh
-  command: "chsh -s /bin/zsh"
+  command: "chsh -s /bin/zsh {{ ansible_env.LOGNAME }}"
+  become: true
 
 - name: Install zshrc
   template:
