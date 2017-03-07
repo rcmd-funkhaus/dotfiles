@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/buckstabu/.oh-my-zsh
+export ZSH={{ home_directory }}/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -80,14 +80,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-source /home/buckstabu/.config/cryptbox/yandex-work/configs/zsh
-
-export DEBFULLNAME="Azer Abdullaev"
-export DEBEMAIL="buckstabu@yandex-team.ru"
-
-export PATH=$PATH:/home/buckstabu/bin
-export GOPATH="/home/buckstabu/dev/golibs"
-export GOBIN="/home/buckstabu/bin"
+export PATH=$PATH:{{ home_directory }}/bin
+export GOPATH="{{ home_directory }}/dev/golibs"
+export GOBIN="{{ home_directory }}/bin"
 
 SSH_ENV="$HOME/.ssh/environment"
 
