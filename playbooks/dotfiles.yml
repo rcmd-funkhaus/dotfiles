@@ -1,0 +1,13 @@
+---
+- hosts: local
+  tasks:
+  - name: vimrc
+    template:
+      src: templates/vimrc.j2
+      dest: "{{ ansible_env.HOME }}/.vimrc"
+      mode: '0644'
+  - name: zshrc
+    template:
+      src: templates/zshrc.j2
+      dest: "{{ ansible_env.HOME }}/.zshrc"
+      mode: '0644'

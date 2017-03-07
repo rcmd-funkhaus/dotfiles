@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ansible-playbook -i inventories/hosts playbooks/dotfiles.yml --diff
