@@ -1,3 +1,6 @@
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
 - stat: "path={{ ansible_env.HOME }}/.oh-my-zsh"
   register: ohmyzsh_directory
 
