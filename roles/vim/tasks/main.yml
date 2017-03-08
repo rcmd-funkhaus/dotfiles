@@ -1,3 +1,6 @@
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
 - name: Install vimrc
   template:
     src: "{{ ansible_env.PWD }}/roles/vim/templates/vimrc.j2"
