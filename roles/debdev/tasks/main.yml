@@ -3,5 +3,5 @@
   sudo: yes
 
 - name: Install build-essentials
-  apt: name=build-essentials
+  apt: name=build-essential
   sudo: yes
