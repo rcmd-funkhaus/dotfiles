@@ -48,8 +48,11 @@ ZSH_THEME="afowler"
 plugins=(git vagrant)
 
 # User configuration
-
+{% if ansible_os_family == "Debian" %}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+{% elif ansible_os_family == "Darwin" %}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
+{% endif %}
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
