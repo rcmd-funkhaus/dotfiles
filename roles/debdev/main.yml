@@ -1,0 +1,7 @@
+- name: Install devscripts
+  apt: name=devscripts
+  sudo: yes
+
+- name: Install build-essentials
+  apt: name=build-essentials
+  sudo: yes
