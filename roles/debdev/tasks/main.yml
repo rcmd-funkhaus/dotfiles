@@ -1,7 +1,9 @@
-- name: Install devscripts
-  apt: name=devscripts
-  sudo: yes
-
-- name: Install build-essentials
-  apt: name=build-essential
+- name: Install development tools for Debian
+  apt: name={{ item }} state=installed
+  with_items:
+    - devscripts
+    - dh-make
+    - dupload
+    - ruby-ronn
+    - lxc
   sudo: yes
