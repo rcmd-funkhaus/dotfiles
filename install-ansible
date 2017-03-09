@@ -1,25 +1,7 @@
 #!/usr/bin/env bash
 
-function deploy_ssh_key() {
-    if ! ls -l $HOME/.ssh/id* > /dev/null; then
-        echo -e '### Generating SSH keys\n'
-        ssh-keygen
-    fi
-    IFS=$'\n'
-    for i in `ls $HOME/.ssh/*.pub`; do
-        if ! grep `cat $i` $HOME/.ssh/authorized_keys > /dev/null; then 
-            echo -e '### Adding 1 key to authorized keys\n'
-            cat $i >> $HOME/.ssh/authorized_keys
-        fi
-    done
-}
-
 case `uname -s` in
     "Darwin")
-        echo -e '### Enabling ssh server\n'
-        sudo systemsetup -setremotelogin on
-        echo -e '### Deploying ssh key\n'
-        deploy_ssh_key
         if ! which brew > /dev/null; then
             echo -e '### Installing Brew\n'
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -32,12 +14,6 @@ case `uname -s` in
     "Linux")
         case `head -n 1 /etc/issue | cut -f 1 -d ' '` in
             "Debian")
-                if ! ls /usr/sbin/sshd > /dev/null; then
-                    echo -e '### Installing OpenSSH server\n'
-                    sudo apt-get install openssh-server
-                fi
-                echo -e '### Deploying ssh key\n'
-                deploy_ssh_key
                 if ! which ansible-playbook > /dev/null; then
                     echo -e '### Installing Ansible\n'
                     sudo apt-get install ansible
