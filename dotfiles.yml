@@ -6,5 +6,6 @@
   hosts: local
   roles:
     - { role: debdev, when: ansible_os_family == "Debian" }
+    - screen
     - vim
     - zsh
