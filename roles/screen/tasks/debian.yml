@@ -1,0 +1,3 @@
+- name: Install screen
+  apt: name=screen
+  sudo: yes

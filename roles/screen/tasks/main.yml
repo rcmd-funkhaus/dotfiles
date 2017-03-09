@@ -1,0 +1,8 @@
+- include: debian.yml
+  when: ansible_os_family == "Debian"
+
+- name: Install screenrc
+  template:
+    src: "{{ ansible_env.PWD }}/roles/screen/templates/screenrc.j2"
+    dest: "{{ ansible_env.HOME }}/.screenrc"
+    mode: '0644'
