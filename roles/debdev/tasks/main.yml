@@ -6,4 +6,4 @@
     - dupload
     - ruby-ronn
     - lxc
-  sudo: yes
+  become: true
