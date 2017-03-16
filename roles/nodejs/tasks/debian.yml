@@ -2,7 +2,10 @@
   apt: name=apt-transport-https state=present
 
 - shell: lsb_release -cs
-  register: debian_release
+  register: debian_release_output
+
+- set_fact:
+    debian_release: "{{ debian_release_output.stdout }}""
 
 - apt_key:
     url: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280"
