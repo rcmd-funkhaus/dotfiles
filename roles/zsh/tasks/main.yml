@@ -10,7 +10,7 @@
 
 - name: Change shell to zsh
   command: "chsh -s /bin/zsh {{ ansible_env.LOGNAME }}"
-  sudo: yes
+  become: true
 
 - name: Install zshrc
   template:
