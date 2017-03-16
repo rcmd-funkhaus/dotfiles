@@ -12,7 +12,6 @@
 - apt_repository:
     repo: deb https://deb.nodesource.com/node_7.x {{ debian_release }} main
     state: present
-    filename: 'nodesource-7'
 
 - name: Install nodejs
   apt: name=nodejs
