@@ -8,8 +8,8 @@
 - apt_repository:
     repo: deb https://deb.nodesource.com/node_7.x {{ debian_release }} main
     state: present
-    present: 'nodesource-7'
+    filename: 'nodesource-7'
 
-- name: Install vim
-  apt: name=vim
+- name: Install nodejs
+  apt: name=nodejs
   sudo: yes
