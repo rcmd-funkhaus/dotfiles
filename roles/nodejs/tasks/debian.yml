@@ -4,8 +4,8 @@
 - shell: lsb_release -cs
   register: debian_release_output
 
-- set_fact:
-    debian_release: "{{ debian_release_output.stdout }}""
+- name: register fact
+  set_fact: debian_release="{{ debian_release_output.stdout }}""
 
 - apt_key:
     url: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280"
@@ -13,7 +13,7 @@
     state: present
 
 - apt_repository:
-    repo: "deb https://deb.nodesource.com/node_7.x {{ debian_release.stdout_lines }} main"
+    repo: "deb https://deb.nodesource.com/node_7.x {{ debian_release }} main"
     state: present
 
 - name: Install nodejs
