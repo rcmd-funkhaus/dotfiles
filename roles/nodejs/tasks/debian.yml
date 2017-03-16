@@ -9,7 +9,8 @@
 - apt_repository:
     repo: "deb https://deb.nodesource.com/node_7.x {{ ansible_distribution_release }} main"
     state: present
+    filename: 'nodesource-7'
 
 - name: Install nodejs
   apt: name=nodejs
-  sudo: yes
+  become_method: sudo
