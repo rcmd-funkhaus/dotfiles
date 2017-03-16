@@ -2,13 +2,13 @@
   register: debian_release
 
 - apt_key:
-  url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-  state: present
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
 
 - apt_repository:
-  repo: deb https://deb.nodesource.com/node_7.x {{ debian_release }} main
-  state: present
-  present: 'nodesource-7'
+    repo: deb https://deb.nodesource.com/node_7.x {{ debian_release }} main
+    state: present
+    present: 'nodesource-7'
 
 - name: Install vim
   apt: name=vim
