@@ -1,5 +1,5 @@
 - shell: lsb_release -cs
-    register: debian_release
+  register: debian_release
 
 - apt_key:
   url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
