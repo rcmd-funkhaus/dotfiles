@@ -5,7 +5,7 @@
   register: debian_release_output
 
 - name: register fact
-  set_fact: debian_release="{{ debian_release_output.stdout }}""
+  set_fact: debian_release="{{ debian_release_output.stdout }}"
 
 - apt_key:
     url: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280"
