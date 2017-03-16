@@ -13,4 +13,4 @@
 
 - name: Install nodejs
   apt: name=nodejs
-  become_method: sudo
+  become: true
