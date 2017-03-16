@@ -10,7 +10,7 @@
     state: present
 
 - apt_repository:
-    repo: "deb https://deb.nodesource.com/node_7.x {{ debian_release }} main"
+    repo: "deb https://deb.nodesource.com/node_7.x {{ debian_release.stdout_lines }} main"
     state: present
 
 - name: Install nodejs
