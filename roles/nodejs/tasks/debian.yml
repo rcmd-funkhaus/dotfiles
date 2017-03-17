@@ -1,3 +1,5 @@
 - name: Install nodejs
-  apt: name=nodejs
+  apt:
+    name: nodejs
+    state: latest
   become: true
