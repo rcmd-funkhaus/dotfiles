@@ -1,7 +1,37 @@
 repositories:
   nodesource:
-    repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
     with_src: true
+    repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
     repo_url: "https://deb.nodesource.com/node_7.x"
+    repo_distro: "{{ ansible_distribution_release }}"
+    repo_sections: "main"
+  bintray:
+    with_src: false
+    repo_gpg: "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"
+    repo_url: "https://dl.bintray.com/like-all/deb"
+    repo_distro: "{{ ansible_distribution_release }}-testing"
+    repo_sections: "main"
+  docker:
+    with_src: false
+    repo_gpg: "https://download.docker.com/linux/debian/gpg"
+    repo_url: "https://apt.dockerproject.org/repo"
+    repo_distro: "debian-{{ ansible_distribution_release }}"
+    repo_sections: "main"
+  dotdeb:
+    with_src: true
+    repo_gpg: "https://www.dotdeb.org/dotdeb.gpg"
+    repo_url: "https://packages.dotdeb.org"
+    repo_distro: "{{ ansible_distribution_release }}"
+    repo_sections: "main"
+  percona:
+    with_src: true
+    repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    repo_url: "http://repo.percona.com/apt"
+    repo_distro: "{{ ansible_distribution_release }}"
+    repo_sections: "main"
+  percona:
+    with_src: true
+    repo_gpg: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&options=mr&search=0x8507EFA5"
+    repo_url: "https://repo.percona.com/apt"
     repo_distro: "{{ ansible_distribution_release }}"
     repo_sections: "main"
