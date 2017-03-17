@@ -1,6 +1,7 @@
 - name: Install development tools for Debian
   apt: name={{ item }} state=installed
   with_items:
+    - apt-transport-https
     - devscripts
     - dh-make
     - dupload
