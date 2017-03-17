@@ -2,6 +2,7 @@
   apt: name={{ item }} state=installed
   with_items:
     - apt-transport-https
+    - gnupg-curl
     - devscripts
     - dh-make
     - dupload
