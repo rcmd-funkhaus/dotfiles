@@ -1,7 +1,7 @@
 repositories:
   nodesource:
-    repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key",
-    repo_type: "deb",
-    repo_url: "http://packages.dotdeb.org",
-    repo_distro: "{{ ansible_distribution_release }}",
+    repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    repo_type: "deb"
+    repo_url: "http://packages.dotdeb.org"
+    repo_distro: "{{ ansible_distribution_release }}"
     repo_sections: "main"
