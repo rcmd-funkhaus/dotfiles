@@ -1,16 +1,3 @@
-- name: Ensure apt-transport-https is installed.
-  apt: name=apt-transport-https state=present
-
-- apt_key:
-    url: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280"
-    id: "68576280"
-    state: present
-
-- apt_repository:
-    repo: "deb https://deb.nodesource.com/node_7.x {{ ansible_distribution_release }} main"
-    state: present
-    filename: 'nodesource-7'
-
 - name: Install nodejs
   apt: name=nodejs
   become: true

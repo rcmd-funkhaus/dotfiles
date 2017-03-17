@@ -1,0 +1,11 @@
+- name: Setup gpg keys
+  command: "wget -O {{ item.value.repo_gpg }} | apt-key add -"
+  become: true
+  with_dict: repositories
+
+- name: Setup additional repositories
+  template:
+    src: "{{ ansible_env.PWD }}/roles/debrepos/templates/repo.list.j2"
+    dest: "/etc/apt/sources.list.d/{{ item.key }}.list"
+  with_dict: repositories
+  become: true
