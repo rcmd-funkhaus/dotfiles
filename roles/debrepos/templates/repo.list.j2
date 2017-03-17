@@ -1,2 +1,5 @@
 # Created by Ansible, do not modify
-{{ item.value.repo_type }} {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
+deb {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
+{% if item.value.with_src %}
+deb-src {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
+{% endif %}
