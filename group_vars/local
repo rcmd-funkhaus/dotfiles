@@ -1,1 +1,2 @@
 home_directory: "{{ ansible_env.HOME }}"
+timezone: "Europe/Berlin"
