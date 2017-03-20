@@ -2,10 +2,15 @@
   apt: name={{ item }} state=installed
   with_items:
     - apt-transport-https
-    - gnupg-curl
     - devscripts
     - dh-make
     - dupload
     - ruby-ronn
     - lxc
   become: true
+
+- name: Install gnupg-curl (fixes GPG keys import on Jessie)
+  apt:
+    name: gnupg-curl
+    state: installed
+  when: ansible_distribution_release == "jessie"
