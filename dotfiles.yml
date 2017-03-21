@@ -9,5 +9,6 @@
     - { role: debrepos, when: ansible_os_family == "Debian" }
     - nodejs
     - screen
+    - tildaslashbin
     - vim
     - zsh
