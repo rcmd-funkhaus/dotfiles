@@ -9,7 +9,7 @@ usage()
 
 case $1 in
     file)
-        URL=`curl -w %{redirect_url} -F "file=@$upfile" http://dump.bitcheese.net/upload-file?simple` 
+        URL=`curl -w %{redirect_url} -F "file=@$upfile" http://dump.bitcheese.net/upload-file?simple`
         echo -n $URL | xclip
         echo $URL
         ;;
