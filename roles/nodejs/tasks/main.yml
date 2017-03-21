@@ -3,3 +3,13 @@
 
 - include: osx.yml
   when: ansible_os_family == "Darwin"
+
+- name: Install essential Node.js packages
+  npm:
+    name: {{ item }}
+    global: yes
+    state: present
+  with_items:
+    - pug
+    - marked
+  become: true

@@ -1,5 +1,8 @@
 - name: Install nodejs
   apt:
-    name: nodejs
+    name: {{ item }}
     state: latest
+  with_items:
+    - nodejs
+    - npm
   become: true
