@@ -11,4 +11,4 @@
   copy:
     src: "{{ ansible_env.PWD }}/roles/vim/files/"
     dest: "{{ ansible_env.HOME }}/.vim/"
-    modeL '0644'
+    mode: '0644'
