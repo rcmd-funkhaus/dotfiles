@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
 ansible-playbook -i inventories/hosts dotfiles.yml -c local --diff --ask-sudo-pass
-
-#just comment
