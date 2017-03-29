@@ -1,4 +1,10 @@
 repositories:
+  backports:
+    with_src: false
+    repo_gpg: "http://mirror.yandex.ru/ubuntu/project/ubuntu-archive-keyring.gpg"
+    repo_url: "https://mirror.yandex.ru/debian"
+    repo_distro: "{{ ansible_distribution_release }}-backports"
+    repo_sections: "main"
   nodesource:
     with_src: true
     repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
