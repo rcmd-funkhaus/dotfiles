@@ -4,5 +4,4 @@
     state: latest
   with_items:
     - nodejs
-    - npm
   become: true
