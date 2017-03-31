@@ -14,3 +14,4 @@
     name: gnupg-curl
     state: installed
   when: ansible_distribution_release == "jessie"
+  become: true
