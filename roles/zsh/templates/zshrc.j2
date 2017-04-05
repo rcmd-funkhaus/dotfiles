@@ -23,6 +23,8 @@ export PATH=$PATH:{{ home_directory }}/bin
 export GOPATH="{{ home_directory }}/dev/golibs"
 export GOBIN="{{ home_directory }}/bin"
 
+alias cdgit='cd $(git rev-parse --show-cdup)'
+
 # Everything related to SSH
 
 SSH_ENV="$HOME/.ssh/environment"
