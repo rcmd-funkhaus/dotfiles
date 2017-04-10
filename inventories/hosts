@@ -1,2 +1,5 @@
 [local]
 localhost
+
+[production]
+it-the-drote.tk:2222  ansible_user=buckstabu

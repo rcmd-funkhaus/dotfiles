@@ -1,0 +1,5 @@
+- name: Test
+  command: "echo 'Bullshit'"
+  register: test
+- debug:
+    var: test.stdout_lines
