@@ -18,7 +18,7 @@ case `uname -s` in
         case `head -n 1 /etc/issue | cut -f 1 -d ' '` in
             "Debian")
                 if ! which pip > /dev/null; then
-                    apt-get -y install python-pip
+                    sudo apt-get -y install python-pip
                 fi
                 if ! which ansible-playbook > /dev/null; then
                     echo -e '### Installing Ansible\n'
