@@ -6,17 +6,23 @@ case `uname -s` in
             echo -e '### Installing Brew\n'
             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         fi
+        if ! which pip > /dev/null; then
+            brew install pip
+        fi
         if ! which ansible-playbook > /dev/null; then
             echo -e '### Installing Ansible\n'
-            brew install ansible
+            sudo pip install -Iv ansible==2.2.1.0
         fi
         ;;
     "Linux")
         case `head -n 1 /etc/issue | cut -f 1 -d ' '` in
             "Debian")
+                if ! which pip > /dev/null; then
+                    apt-get -y install python-pip
+                fi
                 if ! which ansible-playbook > /dev/null; then
                     echo -e '### Installing Ansible\n'
-                    sudo apt-get install ansible
+                    sudo pip install -Iv ansible==2.2.1.0
                 fi
                 ;;
             "CentOS")
