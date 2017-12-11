@@ -1,8 +1,0 @@
-- name: Collecting Facts
-  hosts: production
-  gather_facts: yes
-
-- name: Set up monitoring alerts
-  hosts: production
-  roles:
-    - test
