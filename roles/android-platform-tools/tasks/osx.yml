@@ -1,0 +1,3 @@
+- name: Install latest android-platform-tools
+  command: "brew cask install android-platform-tools"
+  ignore_errors: true

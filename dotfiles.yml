@@ -8,6 +8,7 @@
     - { role: debdev, when: ansible_os_family == "Debian" }
     - { role: debrepos, when: ansible_os_family == "Debian" }
     - { role: atom, when: ansible_os_family == "Darwin" }
+    - { role: android-platform-tools, when: ansible_os_family == "Darwin" }
     - nodejs
     - screen
     - tildaslashbin
