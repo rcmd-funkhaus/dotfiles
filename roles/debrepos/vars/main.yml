@@ -29,6 +29,7 @@ repositories:
     repo_url: "https://packages.dotdeb.org"
     repo_distro: "{{ ansible_distribution_release }}"
     repo_sections: "main"
+    when: ansible_distribution_release == "jessie"
   percona:
     with_src: true
     repo_gpg: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&options=mr&search=0x8507EFA5"
