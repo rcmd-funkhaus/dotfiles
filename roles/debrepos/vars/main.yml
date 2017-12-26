@@ -19,10 +19,10 @@ repositories:
     repo_sections: "main"
   docker:
     with_src: false
-    repo_gpg: "https://get.docker.com/gpg"
-    repo_url: "https://apt.dockerproject.org/repo"
-    repo_distro: "debian-{{ ansible_distribution_release }}"
-    repo_sections: "main"
+    repo_gpg: "https://download.docker.com/linux/debian/gpg"
+    repo_url: "https://download.docker.com/linux/debian"
+    repo_distro: "{{ ansible_distribution_release }}"
+    repo_sections: "stable"
   dotdeb:
     with_src: true
     repo_gpg: "https://www.dotdeb.org/dotdeb.gpg"
