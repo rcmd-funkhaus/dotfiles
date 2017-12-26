@@ -20,7 +20,7 @@ repositories:
   docker:
     with_src: false
     repo_gpg: "https://download.docker.com/linux/debian/gpg"
-    repo_url: "https://apt.dockerproject.org/repo"
+    repo_url: "https://get.docker.com/gpg"
     repo_distro: "debian-{{ ansible_distribution_release }}"
     repo_sections: "main"
   dotdeb:
