@@ -1,5 +1,5 @@
 # Created by Ansible, do not modify
-{% if item.value.repo_restricted_release is defined and item.value.repo_restricted_release == ansible_distribution_release  %}
+{% if item.value.repo_restricted_release is not defined or item.value.repo_restricted_release == ansible_distribution_release  %}
 deb {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
 {% if item.value.with_src %}
 deb-src {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
