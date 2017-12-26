@@ -1,5 +1,9 @@
 # Created by Ansible, do not modify
+{% if item.value.repo_restricted_release is defined and item.value.repo_restricted_release == ansible_distribution_release  %}
 deb {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
 {% if item.value.with_src %}
 deb-src {{ item.value.repo_url }} {{ item.value.repo_distro }} {{ item.value.repo_sections }}
+{% endif %}
+{% else %}
+# The repo {{ item.value.repo_url }} is not available for this Debian/Ubuntu release
 {% endif %}
