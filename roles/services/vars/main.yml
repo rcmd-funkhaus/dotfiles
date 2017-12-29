@@ -16,6 +16,7 @@ packages:
   - postfix
   - prosody
   - prosody-modules
+  - reprepro
   - screen
   - sqlite3
   - sshfs
