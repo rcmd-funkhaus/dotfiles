@@ -1,11 +1,11 @@
 - name: Collecting Facts
-  hosts: local
+  hosts: staging
   gather_facts: yes
 
 - name: Set up local development environment
   vars_files:
     - private/secrets.yml
-  hosts: local
+  hosts: staging
   roles:
     - debdev
     - debrepos

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ansible-playbook -i inventories/hosts production.yml --diff
