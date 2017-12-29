@@ -7,5 +7,7 @@
     - private/secrets.yml
   hosts: local
   roles:
+    - debdev
+    - debrepos
     - secrets
     - services
