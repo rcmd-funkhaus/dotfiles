@@ -1,0 +1,4 @@
+packages:
+  - prosody
+  - postfix
+  - mumble

@@ -8,3 +8,4 @@
   hosts: local
   roles:
     - secrets
+    - services
