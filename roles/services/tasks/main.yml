@@ -1,4 +1,4 @@
 - name: Install packages
   apt: name={{ item }}
-  with_items: "{{ checks_templates }}"
+  with_items: "{{ packages }}"
   become: true
