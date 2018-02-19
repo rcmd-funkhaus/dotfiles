@@ -9,5 +9,6 @@
   roles:
     - debdev
     - debrepos
+    - users
     - secrets
     - services
