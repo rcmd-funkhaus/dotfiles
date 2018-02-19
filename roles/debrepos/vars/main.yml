@@ -8,7 +8,7 @@ repositories:
   nodesource:
     with_src: true
     repo_gpg: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
-    repo_url: "https://deb.nodesource.com/node_7.x"
+    repo_url: "https://deb.nodesource.com/node_8.x"
     repo_distro: "{{ ansible_distribution_release }}"
     repo_sections: "main"
   bintray:
