@@ -1,0 +1,4 @@
+- name: Create "apps" user
+  user:
+    name: apps
+    shell: /usr/sbin/nologin
