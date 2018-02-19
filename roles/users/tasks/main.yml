@@ -2,3 +2,10 @@
   user:
     name: apps
     shell: /usr/sbin/nologin
+    uid: 2007
+
+- name: Create "reactorcoremeltdown" user
+  user:
+    name: reactorcoremeltdown
+    shell: /usr/bin/zsh
+    uid: 2001
