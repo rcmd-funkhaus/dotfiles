@@ -7,6 +7,8 @@
     - dupload
     - ruby-ronn
     - lxc
+    - git
+    - zsh
   become: true
 
 - name: Install gnupg-curl (fixes GPG keys import on Jessie)
