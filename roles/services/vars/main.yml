@@ -1,4 +1,5 @@
 packages:
+  - htop
   - icecast2
   - kurz
   - leicht
