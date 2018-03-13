@@ -3,6 +3,6 @@
 
 - name: Install screenrc
   template:
-    src: "{{ ansible_env.PWD }}/roles/screen/templates/screenrc.j2"
+    src: "roles/screen/templates/screenrc.j2"
     dest: "{{ ansible_env.HOME }}/.screenrc"
     mode: '0644'
