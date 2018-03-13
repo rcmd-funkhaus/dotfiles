@@ -4,5 +4,16 @@
   become: true
 
 - name: Install screen
-  include_role:
+  include_role: 
     name: screen
+  become: true
+
+- name: Install nodejs
+  include_role: 
+    name: nodejs
+  become: true
+
+- name: Install vim
+  include_role: 
+    name: vim
+  become: true
