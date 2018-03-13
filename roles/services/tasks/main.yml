@@ -2,3 +2,7 @@
   apt: name={{ item }}
   with_items: "{{ packages }}"
   become: true
+
+- name: Install screen
+  include_role:
+    name: screen
