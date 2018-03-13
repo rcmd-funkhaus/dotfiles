@@ -7,6 +7,7 @@
     - private/secrets.yml
   hosts: staging
   roles:
+    - earlystageconfigs
     - debdev
     - debrepos
     - users

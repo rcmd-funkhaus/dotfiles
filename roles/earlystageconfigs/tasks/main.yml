@@ -1,0 +1,12 @@
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: Force user-defined configs for apt
+  template:
+    src: "roles/earlystageconfigs/templates/forceuserdefinedconfigs.j2"
+    dest: "/etc/apt/apt.conf.d/forceuserdefinedconfigs"
+    owner: root
+    group: root
+    mode: 0644
+  become: true
