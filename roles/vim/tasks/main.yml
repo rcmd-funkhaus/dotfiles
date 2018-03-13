@@ -3,12 +3,12 @@
 
 - name: Install vimrc
   template:
-    src: "{{ ansible_env.PWD }}/roles/vim/templates/vimrc.j2"
+    src: "roles/vim/templates/vimrc.j2"
     dest: "{{ ansible_env.HOME }}/.vimrc"
     mode: '0644'
 
 - name: Install vim subconfigs
   copy:
-    src: "{{ ansible_env.PWD }}/roles/vim/files/"
+    src: "roles/vim/files/"
     dest: "{{ ansible_env.HOME }}/.vim/"
     mode: '0644'
