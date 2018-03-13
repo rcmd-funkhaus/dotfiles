@@ -1,5 +1,6 @@
 packages:
   - htop
+  - beanstalkd
   - icecast2
   - kurz
   - leicht
@@ -14,6 +15,7 @@ packages:
   - openvpn
   - percona-server-server-5.7
   - percona-xtrabackup
+  - percona-toolkit
   - postfix
   - prosody
   - prosody-modules
@@ -21,4 +23,7 @@ packages:
   - screen
   - sqlite3
   - sshfs
+  - tinc
+  - transmission-daemon
   - ufw
+  - webhook
