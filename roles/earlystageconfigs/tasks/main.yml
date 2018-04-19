@@ -26,3 +26,15 @@
     group: root
     mode: 0644
   become: true
+
+- name: Generate ssh key for root user
+  command: "ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa"
+  become: true
+
+- name: Copy the public key
+  command: "cat /root/.ssh/id_rsa.pub"
+  register: pubkey
+
+- name: Prompt the operator to copy the public key
+  pause:
+    prompt: "Please copy the following key and then add it to the private repository user \n\n{{ pubkey.stdout }}\n\nAfter copying the key, press [Enter]"
