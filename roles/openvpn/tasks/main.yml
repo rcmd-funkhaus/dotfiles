@@ -1,0 +1,51 @@
+- name: Install OpenVPN
+  apt: name={{ item }}
+  with_items:
+    - "openvpn"
+    - "easy-rsa"
+  become: true
+
+- stat: "path=/etc/openvpn/easy-rsa"
+  register: easyrsa
+
+- name: Copy easy-rsa scripts
+  command: cp -r /usr/share/easy-rsa/ /etc/openvpn
+  when: easyrsa.stat.exists == False
+  become: true
+
+- name: Install warpzone config
+  template:
+    src: "roles/openvpn/templates/warpzone.conf.j2"
+    dest: "/etc/openvpn/warpzone.conf"
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: OpenVPN keys directory
+  file:
+    path: /etc/openvpn/easy-rsa/keys
+    state: directory
+    mode: 0700
+  become: true
+
+- name: Install vars
+  template:
+    src: "roles/openvpn/templates/vars.j2"
+    dest: "/etc/openvpn/easy-rsa/vars"
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- stat: "path=/etc/openvpn/dh2048.pem"
+  register: dhparam
+
+- name: Generate Diffie-Helman parameters
+  command: openssl dhparam -out /etc/openvpn/dh2048.pem 2048
+  when: dhparam.stat.exists == False
+  become: true
+
+- name: Generate server keys
+  command: source /etc/openvpn/easy-rsa/vars && /etc/openvpn/easy-rsa/clean-all
+  become: true
