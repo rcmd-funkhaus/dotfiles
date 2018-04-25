@@ -8,6 +8,11 @@
     name: screen
   become: true
 
+- name: Install OpenVPN
+  include_role: 
+    name: openvpn
+  become: true
+
 - name: Install nodejs
   include_role: 
     name: nodejs
