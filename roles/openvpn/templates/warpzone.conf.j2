@@ -1,0 +1,38 @@
+port 4443
+proto tcp
+dev tun
+port-share 127.0.0.1 4444
+
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/server.crt
+key /etc/openvpn/server.key  # This file should be kept secret
+dh /etc/openvpn/dh2048.pem
+
+server 10.9.0.0 255.255.255.0
+
+ifconfig-pool-persist ipp.txt
+push "redirect-gateway def1 bypass-dhcp"
+
+push "dhcp-option DNS 208.67.222.222"
+push "dhcp-option DNS 208.67.220.220"
+
+duplicate-cn
+keepalive 10 120
+
+cipher AES-128-CBC   # AES
+tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
+comp-lzo
+
+user nobody
+group nogroup
+
+persist-key
+persist-tun
+
+status /etc/openvpn/openvpn-status-ssl.log
+verb 3
+
+management localhost 7506
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
+client-cert-not-required
+username-as-common-name
