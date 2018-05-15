@@ -11,5 +11,5 @@
     - debdev
     - debrepos
     - users
-    - secrets
     - services
+    - secrets
