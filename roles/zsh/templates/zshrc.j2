@@ -13,10 +13,14 @@ plugins=(git vagrant)
 # Setup global variables
 {% if ansible_os_family == "Debian" %}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
-export DEBFULLNAME="Azer Abdullaev (Like All)"
-export DEBEMAIL="like-all@yandex.com"
+export DEBFULLNAME="Azer Abdullaev"
+export DEBEMAIL="itthedroteadmin@emaillist.io"
 {% elif ansible_os_family == "Darwin" %}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
+{% endif %}
+
+{% if ansible_user_id == "root" %}
+export PATH="$PATH:/usr/sbin:/sbin"
 {% endif %}
 
 export LANG=en_US.UTF-8
