@@ -12,7 +12,7 @@ USER_COLOUR="\033[1;34m"
 DIR_COLOUR="\033[1;34m"
 RESET_COLOUR="\033[0m"
 
-export PS1="\[$USER_COLOUR\]\$(whoami)\[$RESET_COLOUR\] \[$DIR_COLOUR\]\W\[$RESET_COLOUR\] \[\$(git_prompt_color)\]•\[$RESET_COLOUR\] "
+export PS1="\[$USER_COLOUR\][\$(whoami)]\[$RESET_COLOUR\] \[$DIR_COLOUR\]\W\[$RESET_COLOUR\] \[\$(git_prompt_color)\]•\[$RESET_COLOUR\] "
 
 {% if ansible_os_family == "Debian" %}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
