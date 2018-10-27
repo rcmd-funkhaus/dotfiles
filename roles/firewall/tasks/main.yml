@@ -1,0 +1,20 @@
+- name: Firewall directory
+  file:
+    path: /etc/firewall
+    state: directory
+    mode: 0700
+  become: true
+
+- name: Gather all v4 input rules into a file
+  template:
+    src: "roles/firewall/templates/iptables-input.j2"
+    dest: "/etc/firewall/iptables-input"
+  become: true
+  notify: Reload iptables
+
+- name: Gather all v6 input rules into a file
+  template:
+    src: "roles/firewall/templates/ip6tables-input.j2"
+    dest: "/etc/firewall/ip6tables-input"
+  become: true
+  notify: Reload ip6tables
