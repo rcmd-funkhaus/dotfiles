@@ -37,6 +37,15 @@
     mode: 0600
   become: true
 
+- name: Add authorized_keys for apps user
+  template:
+    src: "roles/users/templates/authorized_keys.j2"
+    dest: "/home/apps/.ssh/authorized_keys"
+    owner: apps
+    group: apps
+    mode: 0600
+  become: true
+
 - name: Install bashrc
   template:
     src: "roles/earlystageconfigs/templates/bashrc.j2"
