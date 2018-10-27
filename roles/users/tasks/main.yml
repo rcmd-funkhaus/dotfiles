@@ -19,6 +19,15 @@
     mode: 0700
   become: true
 
+- name: SSH directory for apps
+  file:
+    path: "/home/apps/.ssh"
+    state: directory
+    owner: apps
+    group: apps
+    mode: 0700
+  become: true
+
 - name: Apps directory
   file:
     path: "/opt/apps"
