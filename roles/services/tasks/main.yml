@@ -22,8 +22,3 @@
   include_role: 
     name: vim
   become: true
-
-- name: Install zsh
-  include_role: 
-    name: zsh
-  become: true
