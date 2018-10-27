@@ -1,5 +1,6 @@
 packages:
   - htop
+  - bash-completion
   - beanstalkd
   - git
   - icecast2
