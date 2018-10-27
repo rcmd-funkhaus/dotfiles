@@ -1,0 +1,9 @@
+ip6tables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+ip6tables -A INPUT -p icmp -j ACCEPT
+ip6tables -A INPUT -i lo -j ACCEPT
+
+{% for rule in input_rules %}
+ip6tables -A INPUT -i {{ansible_default_ipv4.interface}} -p {{rule.protocol}} -s {{rule.address_v6}} --dport {{rule.port}} -j ACCEPT -m comment --comment "Allowing {{rule.port}} for {{rule.address_v6}}"
+{% endfor %}
+
+ip6tables -A INPUT -i {{ansible_default_ipv4.interface}} -j REJECT
