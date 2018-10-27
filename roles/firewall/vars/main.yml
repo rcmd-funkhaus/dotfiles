@@ -16,8 +16,13 @@ input_rules:
     protocol: "tcp"
     address_v4: "{{worldv4}}"
     address_v6: "{{worldv6}}"
+  - name: ssh 2222
+    port: 2222
+    protocol: "tcp"
+    address_v4: "{{worldv4}}"
+    address_v6: "{{worldv6}}"
   - name: tinc tcp
-    port: 22
+    port: 655
     protocol: "tcp"
     address_v4: "{{worldv4}}"
     address_v6: "{{worldv6}}"
