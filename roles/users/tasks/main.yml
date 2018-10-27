@@ -10,6 +10,14 @@
     shell: /bin/bash
     uid: 2001
 
+- name: SSH directory
+  file:
+    path: "/home/rcmd/.ssh"
+    state: directory
+    owner: rcmd
+    group: rcmd
+    mode: 0700
+
 - name: Install bashrc
   template:
     src: "roles/earlystageconfigs/templates/bashrc.j2"
