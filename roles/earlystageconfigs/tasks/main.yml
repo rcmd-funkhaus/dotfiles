@@ -27,6 +27,15 @@
     mode: 0644
   become: true
 
+- name: Install bashrc
+  template:
+    src: "roles/earlystageconfigs/templates/bashrc.j2"
+    dest: "/root/.bashrc"
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
 - stat: "path=/root/.ssh/id_rsa"
   register: sshkey
 
@@ -39,6 +48,12 @@
   command: "cat /root/.ssh/id_rsa.pub"
   register: pubkey
 
-- name: Prompt the operator to copy the public key
-  pause:
-    prompt: "Please copy the following key and then add it to the private repository user \n\n{{ pubkey.stdout }}\n\nAfter copying the key, press [Enter]"
+- name: Install dirmngr
+  apt: name=dirmngr
+
+- name: Install apt-transport-https
+  apt: name=apt-transport-https
+
+#- name: Prompt the operator to copy the public key
+#  pause:
+#    prompt: "Please copy the following key and then add it to the private repository user \n\n{{ pubkey.stdout }}\n\nAfter copying the key, press [Enter]"
