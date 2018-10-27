@@ -17,6 +17,25 @@
     owner: rcmd
     group: rcmd
     mode: 0700
+  become: true
+
+- name: Apps directory
+  file:
+    path: "/opt/apps"
+    state: directory
+    owner: apps
+    group: apps
+    mode: 0755
+  become: true
+
+- name: Add authorized_keys
+  template:
+    src: "roles/users/templates/authorized_keys.j2"
+    dest: "/home/rcmd/.ssh/authorized_keys"
+    owner: rcmd
+    group: rcmd
+    mode: 0600
+  become: true
 
 - name: Install bashrc
   template:
