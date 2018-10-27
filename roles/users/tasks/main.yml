@@ -4,8 +4,17 @@
     shell: /usr/sbin/nologin
     uid: 2007
 
-- name: Create "reactorcoremeltdown" user
+- name: Create "rcmd" user
   user:
-    name: reactorcoremeltdown
-    shell: /usr/bin/zsh
+    name: rcmd
+    shell: /bin/bash
     uid: 2001
+
+- name: Install bashrc
+  template:
+    src: "roles/earlystageconfigs/templates/bashrc.j2"
+    dest: "/home/rcmd/.bashrc"
+    owner: rcmd
+    group: rcmd
+    mode: 0644
+  become: true
