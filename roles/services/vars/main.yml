@@ -1,6 +1,7 @@
 packages:
   - htop
   - beanstalkd
+  - git
   - icecast2
   - kurz
   - leicht
@@ -18,9 +19,7 @@ packages:
   - postfix
   - prosody
   - prosody-modules
-  - reprepro
   - sqlite3
   - sshfs
   - tinc
   - transmission-daemon
-  - webhook
