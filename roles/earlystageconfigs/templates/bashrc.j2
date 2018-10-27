@@ -1,0 +1,59 @@
+git_prompt_color () {
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    if ! git status | grep "nothing to commit" > /dev/null 2>&1; then
+      echo -e "\033[0;31m"
+      return 0
+    fi
+  fi
+  echo -e "\033[0;37m"
+}
+
+USER_COLOUR="\033[1;34m"
+DIR_COLOUR="\033[1;34m"
+RESET_COLOUR="\033[0m"
+
+export PS1="\[$USER_COLOUR\]\$(whoami)\[$RESET_COLOUR\] \[$DIR_COLOUR\]\W\[$RESET_COLOUR\] \[\$(git_prompt_color)\]•\[$RESET_COLOUR\] "
+
+{% if ansible_os_family == "Debian" %}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
+export DEBFULLNAME="Azer Abdullaev"
+export DEBEMAIL="itthedroteadmin@emaillist.io"
+{% elif ansible_os_family == "Darwin" %}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
+{% endif %}
+
+{% if ansible_user_id == "root" %}
+export PATH="$PATH:/usr/sbin:/sbin"
+{% endif %}
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export PATH=$PATH:{{ ansible_env.HOME }}/bin
+export GOPATH="{{ ansible_env.HOME }}/dev/golibs"
+export GOBIN="{{ ansible_env.HOME }}/bin"
+
+# Setup aliases
+alias cdgit='cd $(git rev-parse --show-cdup)'
+alias shell='ansible-console'
+
+# Setup SSH agent
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
