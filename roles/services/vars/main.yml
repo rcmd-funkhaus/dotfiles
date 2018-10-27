@@ -6,7 +6,6 @@ packages:
   - leicht
   - mcabber
   - memcached
-  - mongodb
   - mosh
   - mpd
   - mpdscribble
@@ -24,5 +23,4 @@ packages:
   - sshfs
   - tinc
   - transmission-daemon
-  - ufw
   - webhook
