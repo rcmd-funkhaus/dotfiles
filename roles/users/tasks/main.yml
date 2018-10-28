@@ -55,6 +55,15 @@
     mode: 0600
   become: true
 
+- name: Add sudoers for rcmd
+  template:
+    src: "roles/users/templates/rcmd.j2"
+    dest: "/etc/sudoers.d/rcmd"
+    owner: root
+    group: root
+    mode: 0440
+  become: true
+
 - name: Install bashrc
   template:
     src: "roles/earlystageconfigs/templates/bashrc.j2"
