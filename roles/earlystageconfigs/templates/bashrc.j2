@@ -37,6 +37,8 @@ export GOBIN="{{ ansible_env.HOME }}/bin"
 alias cdgit='cd $(git rev-parse --show-cdup)'
 alias shell='ansible-console'
 alias ls='ls --color'
+alias ll='ls -l'
+alias l='ls -l'
 
 # Setup SSH agent
 SSH_ENV="$HOME/.ssh/environment"
