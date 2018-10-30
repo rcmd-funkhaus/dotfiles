@@ -57,11 +57,29 @@
 
 - name: Add sudoers for rcmd
   template:
-    src: "roles/users/templates/rcmd.j2"
+    src: "roles/users/templates/sudoers.d/rcmd.j2"
     dest: "/etc/sudoers.d/rcmd"
     owner: root
     group: root
     mode: 0440
+  become: true
+
+- name: Add sudoers for apps
+  template:
+    src: "roles/users/templates/sudoers.d/apps.j2"
+    dest: "/etc/sudoers.d/apps"
+    owner: root
+    group: root
+    mode: 0440
+  become: true
+
+- name: Add insert-apps-service executable
+  template:
+    src: "roles/users/templates/insert-apps-service.j2"
+    dest: "/usr/local/bin/insert-apps-service"
+    owner: root
+    group: root
+    mode: 0755
   become: true
 
 - name: Install bashrc
