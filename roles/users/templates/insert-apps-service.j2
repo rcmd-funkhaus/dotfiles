@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+project=$1
+service=$2
+
+cp -f /opt/apps/$project/current/init/$service.service /etc/systemd/system/$service.service
+systemctl daemon-reload
+systemctl is-enabled $service || systemctl enable $service.service
