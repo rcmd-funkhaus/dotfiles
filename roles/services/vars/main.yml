@@ -6,6 +6,7 @@ packages:
   - icecast2
   - kurz
   - leicht
+  - markdown
   - mcabber
   - memcached
   - mosh
