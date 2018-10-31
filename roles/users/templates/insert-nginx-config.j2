@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+filename=`basename $1`
+cp $1 /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/$filename /etc/nginx/sites-enabled/$filename
