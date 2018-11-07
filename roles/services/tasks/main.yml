@@ -22,3 +22,13 @@
   include_role: 
     name: vim
   become: true
+
+- name: Add nginx config for blog
+  template:
+    src: "roles/services/templates/nginx/blog.conf.j2"
+    dest: "/etc/nginx/sites-available/blog.conf"
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
