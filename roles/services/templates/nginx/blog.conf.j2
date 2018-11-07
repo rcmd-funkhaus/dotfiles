@@ -1,0 +1,28 @@
+server {
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    access_log /var/log/nginx/blog.it-the-drote.tk_access.log;
+    error_log /var/log/nginx/blog.it-the-drote.tk_error.log;
+
+    ### SSL cert files ###
+    ssl_certificate {{nginx.ssl_certificate}};
+    ssl_certificate_key {{nginx.ssl_certificate_key}};
+
+    ### Add SSL specific settings here ###
+    ssl_session_timeout 10m;
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers {{nginx.ssl_ciphers}};
+    ssl_prefer_server_ciphers on;
+
+    root /opt/apps/blog;
+
+    server_name blog.it-the-drote.tk;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
