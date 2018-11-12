@@ -1,0 +1,34 @@
+- name: Install nginx
+  apt: name=nginx
+  become: true
+
+- name: Create nginx configs
+  template:
+    src: "roles/nginx/templates/nginx/{{ item }}.conf.j2"
+    dest: "/etc/nginx/sites-available/{{ item }}.conf"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - "blog"
+    - "nextcloud"
+  become: true
+
+- name: Link nginx configs
+  file:
+    src: "/etc/nginx/sites-available/{{ item }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ item }}.conf"
+    state: link
+    force: true
+  with_items:
+    - "blog"
+    - "nextcloud"
+  become: true
+
+- name: Test nginx configs
+  command: /usr/sbin/nginx -t
+  become: true
+
+- name: Reload nginx 
+  command: /bin/systemctl reload nginx.service
+  become: true
