@@ -37,14 +37,14 @@
   when: dhparam.stat.exists == False
   become: true
 
-- name: Erase server keys
-  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/clean-all
-  become: true
-
-- name: Generate CA keys
-  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/build-ca
-  become: true
-
-- name: Generate server keys
-  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/build-key-server server
-  become: true
+#- name: Erase server keys
+#  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/clean-all
+#  become: true
+#
+#- name: Generate CA keys
+#  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/build-ca
+#  become: true
+#
+#- name: Generate server keys
+#  command: chdir=/etc/openvpn/easy-rsa /etc/openvpn/easy-rsa/build-key-server server
+#  become: true
