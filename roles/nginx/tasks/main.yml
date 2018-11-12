@@ -4,7 +4,7 @@
 
 - name: Create nginx configs
   template:
-    src: "roles/nginx/templates/nginx/{{ item }}.conf.j2"
+    src: "roles/nginx/templates/{{ item }}.conf.j2"
     dest: "/etc/nginx/sites-available/{{ item }}.conf"
     owner: root
     group: root
