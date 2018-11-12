@@ -17,7 +17,6 @@ packages:
   - mpd
   - mpdscribble
   - mumble-server
-  - nginx
   - nfs-common
   - openvpn
   - percona-server-server-5.7
