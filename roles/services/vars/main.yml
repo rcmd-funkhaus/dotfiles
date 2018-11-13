@@ -6,6 +6,7 @@ packages:
   - htop
   - bash-completion
   - beanstalkd
+  - curl
   - git
   - icecast2
   - kurz
