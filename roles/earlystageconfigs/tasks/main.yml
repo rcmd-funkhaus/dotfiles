@@ -38,6 +38,7 @@
 
 - stat: "path=/root/.ssh/id_rsa"
   register: sshkey
+  become: true
 
 - name: Generate ssh key for root user
   command: "ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa"
@@ -47,12 +48,15 @@
 - name: Copy the public key
   command: "cat /root/.ssh/id_rsa.pub"
   register: pubkey
+  become: true
 
 - name: Install dirmngr
   apt: name=dirmngr
+  become: true
 
 - name: Install apt-transport-https
   apt: name=apt-transport-https
+  become: true
 
 #- name: Prompt the operator to copy the public key
 #  pause:
