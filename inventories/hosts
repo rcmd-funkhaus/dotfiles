@@ -5,7 +5,7 @@ localhost
 localhost ansible_sudo_flags="-H -S"
 
 [production]
-stretch.it-the-drote.tk:2222  ansible_user=root
+stretch.it-the-drote.tk:2222  ansible_user=rcmd
 
 [staging]
 dev.it-the-drote.tk   ansible_user=root
