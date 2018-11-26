@@ -30,4 +30,4 @@ packages:
   - sshfs
   - tinc
   - transmission-daemon
-  - uuidgen
+  - uuid-runtime
