@@ -4,16 +4,9 @@
 - stat: "path={{ ansible_env.HOME }}/.oh-my-zsh"
   register: ohmyzsh_directory
 
-- name: OhMyZsh directory
-  file:
-    path: "{{ ansible_env.HOME }}/.oh-my-zsh"
-    state: directory
-    mode: 0700
-  become: true
-  when: ohmyzsh_directory.stat.exists == False
-
 - name: Install oh-my-zsh
   command: "git clone git://github.com/robbyrussell/oh-my-zsh.git {{ ansible_env.HOME }}/.oh-my-zsh"
+  ignore_errors: yes
 
 - name: Change shell to zsh
   command: "chsh -s /bin/zsh {{ ansible_env.LOGNAME }}"
