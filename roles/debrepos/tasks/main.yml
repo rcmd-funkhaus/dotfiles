@@ -1,5 +1,5 @@
 - name: Setup gpg keys
-  command: "apt-key adv --fetch-keys {{ item.value.repo_gpg }}"
+  command: "apt-key adv --fetch-keys --no-tty {{ item.value.repo_gpg }}"
   become: true
   with_dict: "{{ repositories }}"
 
