@@ -7,6 +7,7 @@ packages:
   - bash-completion
   - beanstalkd
   - curl
+  - docker-ce
   - git
   - icecast2
   - kurz
