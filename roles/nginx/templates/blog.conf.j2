@@ -23,11 +23,33 @@ server {
     ssl_ciphers {{nginx.ssl_ciphers}};
     ssl_prefer_server_ciphers on;
 
+    ### Compression
+    gzip on;
+    gzip_comp_level    5;
+    gzip_min_length    256;
+    gzip_proxied       any;
+    gzip_vary          on;
+    gzip_types
+    application/rss+xml
+    text/css;
+
     root /opt/apps/blog;
 
     server_name blog.it-the-drote.tk;
 
     location / {
+        try_files /index.html =404;
+    }
+    location /media {
+
+        expires 30d;
+        try_files $uri $uri/ =404;
+    }
+    location /assets {
+        expires 3d;
+        try_files $uri $uri/ =404;
+    }
+    location /pages {
         try_files $uri $uri/ =404;
     }
     location /rss.xml {
