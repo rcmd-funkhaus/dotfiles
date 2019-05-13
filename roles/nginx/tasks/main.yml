@@ -12,6 +12,7 @@
   with_items:
     - "blog"
     - "nextcloud"
+    - "dav"
   become: true
 
 - name: Link nginx configs
@@ -23,6 +24,7 @@
   with_items:
     - "blog"
     - "nextcloud"
+    - "dav"
   become: true
 
 - name: Test nginx configs
