@@ -1,29 +1,25 @@
+
 - name: Install packages
   apt: name={{ item }}
   with_items: "{{ packages }}"
   become: true
 
-- name: Install screen
+- name: Install nginx
   include_role: 
     name: nginx
-  become: true
 
 - name: Install screen
   include_role: 
     name: screen
-  become: true
 
 - name: Install OpenVPN
   include_role: 
     name: openvpn
-  become: true
 
 - name: Install nodejs
   include_role: 
     name: nodejs
-  become: true
 
 - name: Install vim
   include_role: 
     name: vim
-  become: true
