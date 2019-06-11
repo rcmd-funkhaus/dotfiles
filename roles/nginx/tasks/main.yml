@@ -15,6 +15,17 @@
     - "dav"
   become: true
 
+- name: Create nginx config addons
+  template:
+    src: "roles/nginx/templates/conf.d/{{ item }}.conf.j2"
+    dest: "/etc/nginx/conf.d/{{ item }}.conf"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - "log_format_json"
+  become: true
+
 - name: Link nginx configs
   file:
     src: "/etc/nginx/sites-available/{{ item }}.conf"
