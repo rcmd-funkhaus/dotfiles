@@ -20,6 +20,7 @@ packages:
   - postfix
   - prosody
   - prosody-modules
+  - radicale
   - sqlite3
   - sshfs
   - tinc
