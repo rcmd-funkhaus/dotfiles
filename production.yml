@@ -1,11 +1,11 @@
 - name: Collecting Facts
-  hosts: production
+  hosts: staging
   gather_facts: yes
 
 - name: Set up local development environment
   vars_files:
     - private/secrets.yml
-  hosts: production
+  hosts: staging
   roles:
     - earlystageconfigs
     - firewall
