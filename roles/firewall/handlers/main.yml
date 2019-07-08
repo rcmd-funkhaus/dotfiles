@@ -1,6 +1,6 @@
 - name: Reload iptables
-  command: sh -c "iptables --flush INPUT; cat /etc/firewall/iptables-input | bash"
+  command: sh -c "iptables --flush INPUT; cat /etc/firewall/iptables-input | bash; iptables-save"
   become: true
 - name: Reload ip6tables
-  command: sh -c "ip6tables --flush INPUT; cat /etc/firewall/ip6tables-input | bash"
+  command: sh -c "ip6tables --flush INPUT; cat /etc/firewall/ip6tables-input | bash; ip6tables-save"
   become: true
