@@ -58,6 +58,13 @@
   apt: name=apt-transport-https
   become: true
 
+- name: Install certbot
+  apt: name=certbot
+  become: true
+
+- name: Install certbot cloudflare plugin
+  apt: name=python3-certbot-dns-cloudflare
+  become: true
 #- name: Prompt the operator to copy the public key
 #  pause:
 #    prompt: "Please copy the following key and then add it to the private repository user \n\n{{ pubkey.stdout }}\n\nAfter copying the key, press [Enter]"

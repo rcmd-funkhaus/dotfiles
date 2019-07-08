@@ -9,7 +9,7 @@
   roles:
     - earlystageconfigs
     - firewall
+    - secrets
     - debrepos
     - users
     - services
-    - secrets

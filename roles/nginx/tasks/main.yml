@@ -38,6 +38,16 @@
     - "dav"
   become: true
 
+- name: Check if dhparam.pem exists
+  stat:
+    path: "/etc/ssl/certs/dhparam.pem"
+  register: dhparam
+
+- name: Issue dhparam.pem
+  command: "/usr/bin/openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048"
+  become: true
+  when: dhparam.stat.exists == False
+
 - name: Test nginx configs
   command: /usr/sbin/nginx -t
   become: true
