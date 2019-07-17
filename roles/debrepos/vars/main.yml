@@ -17,9 +17,3 @@ repositories:
     repo_url: "https://download.docker.com/linux/debian"
     repo_distro: "{{ ansible_distribution_release }}"
     repo_sections: "stable"
-  percona:
-    with_src: true
-    repo_gpg: "https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&options=mr&search=0x8507EFA5"
-    repo_url: "https://repo.percona.com/apt"
-    repo_distro: "{{ ansible_distribution_release }}"
-    repo_sections: "main"
