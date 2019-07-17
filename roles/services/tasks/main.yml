@@ -23,3 +23,13 @@
 - name: Install vim
   include_role: 
     name: vim
+
+- name: XMPP Server config
+  template:
+    src: "roles/secrets/templates/prosody.cfg.lua.j2"
+    dest: "/etc/prosody/prosody.cfg.lua"
+    owner: root
+    group: prosody
+    mode: 0640
+  become: true
+  diff: false
