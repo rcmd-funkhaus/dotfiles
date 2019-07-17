@@ -14,6 +14,7 @@ packages:
   - markdown
   - mosh
   - nfs-common
+  - lua-dbi-sqlite3
   - openvpn
   #- percona-server-server-5.7
   #- percona-xtrabackup
