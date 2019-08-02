@@ -14,7 +14,8 @@ packages:
   - markdown
   - mosh
   - nfs-common
-  - lua-dbi-sqlite3
+  - lua-dbi-mysql
+  - mariadb-server
   - openvpn
   #- percona-server-server-5.7
   #- percona-xtrabackup
@@ -23,6 +24,8 @@ packages:
   - prosody
   - prosody-modules
   - radicale
+  - python3-bcrypt
+  - python3-passlib
   - sqlite3
   - sshfs
   - tinc
