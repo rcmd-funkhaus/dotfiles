@@ -10,6 +10,7 @@
     group: root
     mode: 0644
   with_items:
+    - "default"
     - "blog"
     - "nextcloud"
     - "dav"
@@ -33,6 +34,7 @@
     state: link
     force: true
   with_items:
+    - "default"
     - "blog"
     - "nextcloud"
     - "dav"
