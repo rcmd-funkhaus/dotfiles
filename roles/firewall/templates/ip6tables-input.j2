@@ -6,4 +6,6 @@ ip6tables -A INPUT -i lo -j ACCEPT
 ip6tables -A INPUT -i {{ansible_default_ipv4.interface}} -p {{rule.protocol}} -s {{rule.address_v6}} --dport {{rule.port}} -j ACCEPT -m comment --comment "Allowing {{rule.port}} for {{rule.address_v6}}"
 {% endfor %}
 
+ip6tables -A INPUT -i tun0 -j ACCEPT
+
 ip6tables -A INPUT -i {{ansible_default_ipv4.interface}} -j REJECT
