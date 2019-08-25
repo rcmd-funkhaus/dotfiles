@@ -14,6 +14,7 @@
     - "blog"
     - "nextcloud"
     - "dav"
+    - "site"
   become: true
 
 - name: Create nginx config addons
@@ -38,6 +39,7 @@
     - "blog"
     - "nextcloud"
     - "dav"
+    - "site"
   become: true
 
 - name: Check if dhparam.pem exists
