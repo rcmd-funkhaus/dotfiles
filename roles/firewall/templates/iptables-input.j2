@@ -6,4 +6,6 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -i {{ ansible_default_ipv4.interface }} -p {{ rule.protocol }} -s {{ rule.address_v4 }} --dport {{ rule.port }} -j ACCEPT -m comment --comment "Allowing {{ rule.port }} for {{ rule.address_v4 }}"
 {% endfor %}
 
+iptables -A INPUT -i tun0 -j ACCEPT
+
 iptables -A INPUT -i {{ ansible_default_ipv4.interface }} -j REJECT

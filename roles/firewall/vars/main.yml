@@ -71,3 +71,8 @@ input_rules:
     protocol: "udp"
     address_v4: "{{worldv4}}"
     address_v6: "{{worldv6}}"
+  - name: Openvpn udp
+    port: 1194
+    protocol: "udp"
+    address_v4: "{{worldv4}}"
+    address_v6: "{{worldv6}}"
