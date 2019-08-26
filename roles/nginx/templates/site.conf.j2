@@ -56,9 +56,9 @@ server {
         charset UTF-8;
         try_files $uri $uri/ =404;
     }
-    location /index2.html {
+    location /beta {
         auth_basic "Protected area";
         auth_basic_user_file /opt/apps/site/assets/htpasswd/.htpasswd;
-        try_files $uri $uri/ =404;
+        try_files /index2.html =404;
     }
 }
