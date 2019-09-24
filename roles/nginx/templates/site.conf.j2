@@ -40,7 +40,7 @@ server {
     application/rss+xml
     text/css;
 
-    root /opt/apps/site/live;
+    root /opt/apps/site/site/live;
 
     server_name rcmd.space;
 
@@ -48,10 +48,12 @@ server {
         try_files /index.html =404;
     }
     location /media {
+        root /opt/apps/site;
         expires 30d;
         try_files $uri $uri/ =404;
     }
     location /assets {
+        root /opt/apps/site;
         expires 3d;
         try_files $uri $uri/ =404;
     }
@@ -92,7 +94,7 @@ server {
     application/rss+xml
     text/css;
 
-    root /opt/apps/site/beta;
+    root /opt/apps/site/site/beta;
 
     server_name beta.rcmd.space;
 
@@ -103,10 +105,12 @@ server {
         try_files /index.html =404;
     }
     location /media {
+        root /opt/apps/site;
         expires 30d;
         try_files $uri $uri/ =404;
     }
     location /assets {
+        root /opt/apps/site;
         expires 3d;
         try_files $uri $uri/ =404;
     }
