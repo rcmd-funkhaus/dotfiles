@@ -5,7 +5,7 @@
     mode: '0600'
   become: true
 
-  - name: Webhooks directory
+- name: Webhooks directory
   file:
     path: /etc/webhooks
     state: directory
