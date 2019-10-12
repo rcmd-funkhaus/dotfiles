@@ -16,6 +16,7 @@
     - "dav"
     - "sync"
     - "site"
+    - "api"
   become: true
 
 - name: Create nginx config addons
@@ -42,6 +43,7 @@
     - "dav"
     - "sync"
     - "site"
+    - "api"
   become: true
 
 - name: Check if dhparam.pem exists
