@@ -1,7 +1,7 @@
 - name: Install webhooks config
   template:
-    src: "roles/webhooks/templates/webhooks.conf.j2"
-    dest: "/etc/webhooks.conf"
+    src: "roles/webhooks/templates/webhook.conf.j2"
+    dest: "/etc/webhook.conf"
     mode: '0600'
   become: true
 
