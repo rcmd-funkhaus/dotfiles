@@ -10,7 +10,7 @@
 
 - name: Install webhooks
   include_role: 
-    name: nginx
+    name: webhooks
 
 - name: Install screen
   include_role: 
