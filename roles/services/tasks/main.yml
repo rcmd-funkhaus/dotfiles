@@ -8,13 +8,13 @@
   include_role: 
     name: nginx
 
+- name: Install webhooks
+  include_role: 
+    name: nginx
+
 - name: Install screen
   include_role: 
     name: screen
-
-- name: Install OpenVPN
-  include_role: 
-    name: openvpn
 
 - name: Install nodejs
   include_role: 

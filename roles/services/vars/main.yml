@@ -30,5 +30,4 @@ packages:
   - sshfs
   - tinc
   - transmission-daemon
-  - webhook
   - uuid-runtime

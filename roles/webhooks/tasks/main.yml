@@ -1,0 +1,30 @@
+- name: Install webhooks config
+  template:
+    src: "roles/webhooks/templates/webhooks.conf.j2"
+    dest: "/etc/webhooks.conf"
+    mode: '0600'
+  become: true
+
+  - name: Webhooks directory
+  file:
+    path: /etc/webhooks
+    state: directory
+    mode: 0700
+  become: true
+
+- name: Copy webhook scripts
+  copy:
+    src: roles/webhooks/files/scripts
+    dest: /etc/webhooks/
+    mode: 0700
+    owner: root
+    group: root
+  become: true
+
+- name: Install webhooks
+  apt: name=webhooks
+  become: true
+
+- name: Restart webhooks 
+  command: /bin/systemctl restart webhooks.service
+  become: true
