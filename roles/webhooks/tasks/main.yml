@@ -26,5 +26,5 @@
   become: true
 
 - name: Restart webhooks 
-  command: /bin/systemctl restart webhooks.service
+  command: /bin/systemctl restart webhook.service
   become: true
