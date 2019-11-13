@@ -8,9 +8,9 @@
   include_role: 
     name: nginx
 
-- name: Install webhooks
-  include_role: 
-    name: webhooks
+#- name: Install webhooks
+#  include_role: 
+#    name: webhooks
 
 - name: Install screen
   include_role: 
