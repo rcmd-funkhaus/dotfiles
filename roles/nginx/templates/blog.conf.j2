@@ -61,8 +61,8 @@ server {
     error_log /var/log/nginx/blog.rcmd.space_error.log;
 
     ### SSL cert files ###
-    ssl_certificate {{nginx.ssl_certificate}};
-    ssl_certificate_key {{nginx.ssl_certificate_key}};
+    ssl_certificate {{nginx.new_ssl_certificate}};
+    ssl_certificate_key {{nginx.new_ssl_certificate_key}};
 
     ### Add SSL specific settings here ###
     ssl_session_timeout 10m;
