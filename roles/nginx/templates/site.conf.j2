@@ -64,6 +64,8 @@ server {
         charset UTF-8;
         try_files $uri $uri/ =404;
     }
+
+    include /opt/apps/site/configs/nginx/redirects.conf;
 }
 
 server {
