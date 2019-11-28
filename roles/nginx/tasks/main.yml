@@ -28,6 +28,7 @@
     mode: 0644
   with_items:
     - "log_format_json"
+    - "limits"
   become: true
 
 - name: Link nginx configs
