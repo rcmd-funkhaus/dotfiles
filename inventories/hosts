@@ -5,7 +5,7 @@ localhost
 localhost ansible_sudo_flags="-H -S"
 
 [production]
-buster.rcmd.space  ansible_user=root
+buster.rcmd.space  ansible_user=rcmd
 
 [staging]
-dev.rcmd.space   ansible_user=root
+dev.rcmd.space   ansible_user=rcmd
