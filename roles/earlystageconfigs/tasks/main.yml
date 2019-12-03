@@ -1,6 +1,6 @@
 - name: Set hostname
   hostname:
-    name: "{{ hostname }}"
+    name: "{{ vpc.hostname }}"
 
 - name: Disable bash history
   file:
