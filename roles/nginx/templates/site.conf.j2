@@ -17,7 +17,7 @@ server {
     listen [::]:443 ssl;
 
     access_log /var/log/nginx/rcmd.space_access.log json;
-    access_log /var/log/nginx/rcmd.space_access-legacy.log;
+    access_log syslog:server=127.0.0.1,severity=info,tag=rcmd_space json;
     error_log /var/log/nginx/rcmd.space_error.log;
 
     ### SSL cert files ###
