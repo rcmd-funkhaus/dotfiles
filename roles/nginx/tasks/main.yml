@@ -17,6 +17,7 @@
     - "sync"
     - "site"
     - "api"
+    - "bank"
   become: true
 
 - name: Create nginx config addons
@@ -45,6 +46,7 @@
     - "sync"
     - "site"
     - "api"
+    - "bank"
   become: true
 
 - name: Check if dhparam.pem exists
