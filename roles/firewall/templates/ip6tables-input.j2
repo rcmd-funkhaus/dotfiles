@@ -1,5 +1,5 @@
 /sbin/ip6tables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-/sbin/ip6tables -A INPUT -p icmp -j ACCEPT
+/sbin/ip6tables -A INPUT -p icmpv6 -j ACCEPT
 /sbin/ip6tables -A INPUT -i lo -j ACCEPT
 
 {% for rule in input_rules %}
