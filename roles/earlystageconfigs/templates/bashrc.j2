@@ -25,12 +25,13 @@ export PS1="\[$DIR_COLOUR\][\[$RESET_COLOUR\]\[$USER_COLOUR\]\$(whoami)\[$RESET_
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
 export DEBFULLNAME="Azer Abdullaev"
 export DEBEMAIL="itthedroteadmin@emaillist.io"
+
+if [[ `whoami` = 'root' ]]; then
+  export PATH="${PATH}:/sbin:/usr/sbin"
+fi
+
 {% elif ansible_os_family == "Darwin" %}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
-{% endif %}
-
-{% if ansible_user_id == "root" %}
-export PATH="$PATH:/usr/sbin:/sbin"
 {% endif %}
 
 export LANG=en_US.UTF-8
