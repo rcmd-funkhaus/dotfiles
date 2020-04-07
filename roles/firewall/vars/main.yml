@@ -86,3 +86,8 @@ input_rules:
     protocol: "udp"
     address_v4: "{{worldv4}}"
     address_v6: "{{worldv6}}"
+  - name: Mosh server
+    port: "60000:61000"
+    protocol: "udp"
+    address_v4: "{{worldv4}}"
+    address_v6: "{{worldv6}}"
