@@ -1,5 +1,6 @@
 server {
     listen 80;
+    listen [::]:80;
     server_name cloud.it-the-drote.tk;
 
     return 301 https://$server_name$request_uri;
