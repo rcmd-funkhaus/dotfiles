@@ -4,7 +4,7 @@
 
 - name: Set up local development environment
   vars_files:
-    - "{{ ansible_env.HOME }}/.ansible/vault.yml"
+    - "~/.ansible/vault.yml"
   hosts: production
   roles:
     - earlystageconfigs
