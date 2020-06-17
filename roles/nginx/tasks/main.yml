@@ -18,6 +18,7 @@
     - "site"
     - "api"
     - "bank"
+    - "transmission"
   become: true
 
 - name: Create nginx config addons
@@ -47,6 +48,7 @@
     - "site"
     - "api"
     - "bank"
+    - "transmission"
   become: true
 
 - name: Check if dhparam.pem exists
