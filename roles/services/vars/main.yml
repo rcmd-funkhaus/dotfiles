@@ -44,3 +44,5 @@ packages:
   - tinc
   - transmission-daemon
   - uuid-runtime
+  - khal
+  - todoman
