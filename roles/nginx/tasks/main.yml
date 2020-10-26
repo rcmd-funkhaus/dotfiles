@@ -12,6 +12,7 @@
   with_items:
     - "default"
     - "blog"
+    - "git"
     - "dav"
     - "sync"
     - "site"
@@ -42,6 +43,7 @@
     - "default"
     - "blog"
     - "dav"
+    - "git"
     - "sync"
     - "site"
     - "api"
