@@ -11,9 +11,7 @@
     mode: 0644
   with_items:
     - "default"
-    - "board"
     - "blog"
-    - "nextcloud"
     - "dav"
     - "sync"
     - "site"
@@ -43,8 +41,6 @@
   with_items:
     - "default"
     - "blog"
-    - "board"
-    - "nextcloud"
     - "dav"
     - "sync"
     - "site"
