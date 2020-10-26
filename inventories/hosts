@@ -1,5 +1,5 @@
 [local]
-localhost
+localhost ansible_connection=local
 
 [vagrant]
 localhost ansible_sudo_flags="-H -S"

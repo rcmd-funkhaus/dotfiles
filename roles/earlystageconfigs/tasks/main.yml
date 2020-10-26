@@ -1,6 +1,19 @@
+- name: Add provisioning directory for keeping state in
+  file:
+    path: "/etc/provisioning"
+    state: directory
+    mode: 0755
+  become: true
+
+- stat:
+    path: "/etc/provisioning/earlystageconfigs"
+  register: e
+  become: true
+
 - name: Set hostname
   hostname:
     name: "{{ vpc.hostname }}"
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Disable bash history
   file:
@@ -9,6 +22,7 @@
     state: link
     force: true
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Disable zsh history
   file:
@@ -17,6 +31,7 @@
     state: link
     force: true
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Force user-defined configs for apt
   template:
@@ -26,6 +41,7 @@
     group: root
     mode: 0644
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Install bashrc
   template:
@@ -35,6 +51,7 @@
     group: root
     mode: 0644
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - stat: "path=/root/.ssh/id_rsa"
   register: sshkey
@@ -49,21 +66,35 @@
   command: "cat /root/.ssh/id_rsa.pub"
   register: pubkey
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Install dirmngr
   apt: name=dirmngr
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Install apt-transport-https
   apt: name=apt-transport-https
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Install certbot
   apt: name=certbot
   become: true
+  when: e.stat.exists is defined and not e.stat.exists
 
 - name: Install certbot cloudflare plugin
   apt: name=python3-certbot-dns-cloudflare
+  become: true
+  when: e.stat.exists is defined and not e.stat.exists
+
+- name: Create provisioning marker for this role
+  file:
+    path: "/etc/provisioning/earlystageconfigs"
+    state: touch
+    owner: root
+    group: root
+    mode: 0644
   become: true
 #- name: Prompt the operator to copy the public key
 #  pause:

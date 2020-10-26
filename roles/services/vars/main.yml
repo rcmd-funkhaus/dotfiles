@@ -46,3 +46,4 @@ packages:
   - uuid-runtime
   - khal
   - todoman
+  - vim

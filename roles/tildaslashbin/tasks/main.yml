@@ -1,5 +1,0 @@
-- name: Install executables
-  copy:
-    src: "{{ ansible_env.PWD }}/roles/tildaslashbin/files/"
-    dest: "{{ ansible_env.HOME }}/bin/"
-    mode: '0755'

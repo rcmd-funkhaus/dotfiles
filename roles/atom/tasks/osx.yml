@@ -1,3 +1,0 @@
-- name: Install latest Atom.io from Cask
-  command: "brew cask install atom"
-  ignore_errors: true

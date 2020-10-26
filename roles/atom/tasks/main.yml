@@ -1,9 +1,0 @@
-- include: osx.yml
-  when: ansible_os_family == "Darwin"
-
-- name: Install essential Atom.io packages
-  command: "apm install --production {{ item }}"
-  with_items:
-    - vim-mode-plus
-    - git-control
-    - language-pug

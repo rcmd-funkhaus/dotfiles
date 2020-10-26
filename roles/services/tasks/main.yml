@@ -20,10 +20,6 @@
   include_role: 
     name: nodejs
 
-- name: Install vim
-  include_role: 
-    name: vim
-
 - name: XMPP Server config
   template:
     src: "roles/secrets/templates/prosody.cfg.lua.j2"

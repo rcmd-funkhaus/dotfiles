@@ -1,10 +1,6 @@
-- debug:
-    msg: "Variable output: {{ hostvars['localhost']['roles_nginx'].stdout }}"
-
 - name: Install nginx
   apt: name=nginx
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
 
 - name: Create nginx configs
   template:
@@ -25,7 +21,6 @@
     - "bank"
     - "transmission"
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
 
 - name: Create nginx config addons
   template:
@@ -38,7 +33,6 @@
     - "log_format_json"
     - "limits"
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
 
 - name: Link nginx configs
   file:
@@ -58,7 +52,6 @@
     - "bank"
     - "transmission"
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
 
 - name: Check if dhparam.pem exists
   stat:
@@ -73,9 +66,7 @@
 - name: Test nginx configs
   command: /usr/sbin/nginx -t
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
 
 - name: Reload nginx 
   command: /bin/systemctl reload nginx.service
   become: true
-  when: hostvars['localhost']['roles_nginx'].stdout is defined and hostvars['localhost']['roles_nginx'].stdout != ''
