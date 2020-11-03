@@ -12,7 +12,9 @@
   with_items:
     - "default"
     - "blog"
+    - "podcasts"
     - "git"
+    - "drone"
     - "dav"
     - "sync"
     - "site"
@@ -42,8 +44,10 @@
   with_items:
     - "default"
     - "blog"
+    - "podcasts"
     - "dav"
     - "git"
+    - "drone"
     - "sync"
     - "site"
     - "api"
