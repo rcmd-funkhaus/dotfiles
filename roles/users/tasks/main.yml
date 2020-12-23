@@ -90,12 +90,3 @@
     group: root
     mode: 0755
   become: true
-
-- name: Install bashrc
-  template:
-    src: "roles/earlystageconfigs/templates/bashrc.j2"
-    dest: "/home/rcmd/.bashrc"
-    owner: rcmd
-    group: rcmd
-    mode: 0644
-  become: true
